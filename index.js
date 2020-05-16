@@ -1,7 +1,7 @@
 "use strict";
 let express = require('express')
-let logger = require('morgan');
-let cookieParser = require('cookie-parser');
+var logger = require('morgan');
+var cookieParser = require('cookie-parser');
 let bodyParser = require('body-parser')
 let passport = require('passport');
 let session = require('express-session');
@@ -79,6 +79,6 @@ app.use(function(err, req, res, next) {
     });
 });
 
-app.listen(5000, function() {
+app.listen(process.env.PORT || 5000, function() {
     console.log("Server started at port 5000")
 })
