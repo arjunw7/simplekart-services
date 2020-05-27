@@ -8,8 +8,7 @@ let session = require('express-session');
 let cors = require('cors')
 let path = require('path');
 
-let app = express()
-console.log(new Date())
+let app = express();
 
 require('./models/models');
 require('./passport')(passport);

@@ -80,6 +80,17 @@ router.route('/customer/:id')
         });
     });
 
+router.route('/customers/pendingSellers')
+    //get pending seller
+    .get(function(req, res) {
+        User.find({"status": "SELLER_PENDING"}, function(err, user) {
+            if (err) {
+                res.send({status: 'failure', pendingSellers:null, error:err});
+            }
+            res.send({status: 'success', pendingSellers:user, error:null});
+        });
+    });
+
 var createHash = function(password){
     return bCrypt.hashSync(password, bCrypt.genSaltSync(10), null);
 };
