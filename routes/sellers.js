@@ -91,6 +91,16 @@ router.route('/sellers/:id')
         });
     });
 
+router.route('/sellers/email/:email')
+    .get(function(req, res) {
+        Seller.find({email: req.params.email}, function(err, sellers) {
+            if (err) {
+                return res.send({status: 'failure', sellers:null, error:err});
+            }
+            return res.send({status: 'success', sellers:sellers, error:err});
+        });
+    });
+
 router.route('/sellers/referer/:id')
     .get(function(req, res) {
         Seller.find({createdBy: req.params.id}, function(err, sellers) {

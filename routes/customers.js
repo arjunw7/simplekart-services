@@ -80,6 +80,21 @@ router.route('/customer/:id')
         });
     });
 
+router.route('/customers/:email/:status')
+    .put(function(req, res){
+        User.find({email:req.params.email}, function(err, users){
+            if(err)
+                res.send({status: 'failure', customers:null, error:err});
+            let user = users[0]
+            user.status = req.params.status;
+            user.save(function(err, savedUser){
+                if(err)
+                    res.send({status: 'failure', customers:null, error:err});
+                res.send({status: 'success', customer:savedUser, error:null});
+            });
+        });
+    })
+
 router.route('/customers/pendingSellers')
     //get pending seller
     .get(function(req, res) {
