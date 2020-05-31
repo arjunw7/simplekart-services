@@ -55,7 +55,8 @@ let sellerSchema = new mongoose.Schema({
     status:String,
     gstNumber:String,
     gstFile:String,
-    createdBy: String
+    createdBy: String,
+    createdByUserName:String
 });
 
 let inquirySchema = new mongoose.Schema({

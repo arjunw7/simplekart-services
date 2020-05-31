@@ -29,7 +29,7 @@ router.route('/sellers')
         newSeller.gstNumber = req.body.gstNumber;
         newSeller.gstFile = req.body.gstFile;
         newSeller.createdBy = req.body.createdBy;
-
+        newSeller.createdByUserName = req.body.createdByUserName
         newSeller.save(function(err, seller) {
             if (err) {
                 return res.send({status: 'failure', seller:null, error:err});
