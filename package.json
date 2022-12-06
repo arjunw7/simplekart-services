@@ -20,7 +20,7 @@
         "cors": "^2.7.1",
         "debug": "~2.2.0",
         "ejs": "~2.4.1",
-        "express": "~4.13.4",
+        "express": "~4.17.3",
         "express-session": "^1.13.0",
         "instamojo-nodejs": "0.0.5",
         "mongoose": "^4.5.1",
